@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Fuggles&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Регистрация</title>
+</head>
+<body>
+    <form class="registration"  action="/createUser" id="reg" method="post">
+        <h1>Welcome!</h1>
+      
+        <label class="pure-material-textfield-outlined">
+           <input class="input-dt" id="email" name="email" placeholder="Email" type="email" required>
+        </label>
+      
+        <label class="pure-material-textfield-outlined">
+          <input class="input-dt"  id="name"  name="name" placeholder="Your name" type="text" required>
+       </label>
+
+        <label class="pure-material-textfield-outlined">
+          <input class="input-dt" id="password" name="password" placeholder="Password" type="password" required>
+        </label>
+
+        <label class="pure-material-radio">
+            <input type="checkbox" name="roleUser" id="personal" class="checkbox-dt">
+            <span>Personal Account</span>
+        </label>
+
+        <label class="pure-material-radio">
+            <input type="checkbox" name="roleAdmin" id="business" class="checkbox-dt">
+            <span>Business Account</span>
+        </label>
+      
+        <button class="pure-material-button-contained" type="submit">Sign Up</button>
+
+        <a href="#" class="formButtR">authorization</a>
+      
+        <div class="done">
+          <h1>You're all set!</h1>
+          <a class="pure-material-button-text" href="javascript:window.location.reload(true)">Again</a>
+        </div>
+        <div class="progress">
+          <progress class="pure-material-progress-circular">
+        </div>
+      </form>
+
+
+
+
+
+
+      <form class="registration" action="/entry" id="auth" method="get">
+        <h1>Welcome!</h1>
+          <label class="pure-material-textfield-outlined">
+              <input class="input-dt"  name="name" placeholder="Your name" type="text" required>
+          </label>
+
+          <label class="pure-material-textfield-outlined">
+              <input class="input-dt" name="password" placeholder="Password" type="password" required>
+          </label>
+    
+        <button class="pure-material-button-contained" type="submit">Log in</button>
+
+        <a href="#" class="formButtA">registration</a>
+      
+        <div class="done">
+          <h1>You're all set!</h1>
+          <a class="pure-material-button-text" href="javascript:window.location.reload(true)">Again</a>
+        </div>
+        <div class="progress">
+          <progress class="pure-material-progress-circular">
+        </div>
+      </form>
+    
+
+
+      <script>
+$('.formButtR').click(function () {  
+
+
+$("#reg").css("display", "none");
+$("#auth").css("display", "block");
+
+
+
+});
+
+
+$('.formButtA').click(function () {  
+
+$("#reg").css("display", "block");
+$("#auth").css("display", "none");
+
+
+
+});
+      </script>
+    </body>
+</html>
+
+
+<!-- -->

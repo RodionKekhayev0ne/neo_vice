@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Fuggles&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Панель Админа</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="logo"><img src="/img/logo.png" alt=""></div>
+      
+        <div class="communicate">
+        
+            <ul class="qmenu" ><img class="dd" src="/img/squares.png" alt="">
+                <li id="first" class="menu-element"><a href="">Личный кабинет</a></li>
+                <li id="s"class="menu-element"><a href="">Вансии</a></li>
+                <li id="o"class="menu-element"><a href="">Поддержка</a></li>
+                <li id="last" class="menu-element"><a href="exit.html">Exit<img src="images/logout.png" alt=""></a></li>  
+          </ul>
+    </div>
+</div>
+
+<div class="admin-panel">
+
+<form class="admin-form" id="add-offer"  th:action="${adminId}" action="/create" method="post">
+    <h1>Admin panel</h1>
+    <label class="pure-material-textfield-outlined">
+      <input  id="header"  name="header" placeholder="Header" type="text" required>
+    </label>
+
+    <label class="pure-material-textfield-outlined">
+        <input  id="companyName" name="companyName" placeholder="Company name" type="text" required>
+    </label>
+
+    <label class="pure-material-textfield-outlined">
+        <textarea  id="preview" name="preview" translate="yes" placeholder="Preview" type="text" required></textarea>
+    </label>
+
+    <label class="pure-material-textfield-outlined">
+        <textarea  id="description" name="description" translate="yes" placeholder="Description" type="text" required></textarea>
+    </label>
+
+    <label class="pure-material-textfield-outlined">
+        <input  id="email"name="email" placeholder="Email contact" type="text" required>
+    </label>
+
+    <label class="pure-material-textfield-outlined">
+        <input  id="number" name="number" placeholder="Phone contact" type="text" required>
+    </label>
+
+
+
+
+    <button class="pure-material-button-contained" type="submit">Add</button>
+
+   
+    <div class="done">
+      <h1>You're all set!</h1>
+      <a class="pure-material-button-text" href="javascript:window.location.reload(true)">Again</a>
+    </div>
+    <div class="progress">
+      <progress class="pure-material-progress-circular">
+    </div>
+  </form>
+
+  <div class="offers">
+    <h2>Your offers</h2>
+    <div th:each="value : ${values}">
+        <p class="offer-title"  th:text="${value.getHeader}"></p>
+        <p class="publishing-date" th:text="${value.getPublishingDate}"></p>
+    </div>
+
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

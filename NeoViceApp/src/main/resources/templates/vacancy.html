@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Fuggles&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <title>Стажировка</title>
+</head>
+<body>
+    
+    <div class="menu">
+        <div class="logo"><img src="/img/logo.png" alt=""></div>
+      
+        <div class="communicate">
+        
+            <ul class="qmenu" ><img class="dd" src="/img/squares.png" alt="">
+                <li id="first" class="menu-element"><a href="">Личный кабинет</a></li>
+                <li id="s"class="menu-element"><a href="">Избранное</a></li>
+                <li id="o"class="menu-element"><a href="">Поддержка</a></li>
+                <li id="last" class="menu-element"><a href="exit.html">Exit<img src="images/logout.png" alt=""></a></li>  
+          </ul>
+    </div>
+</div>
+<div class="content">
+<h1 class="content-title" th:text="${title}"> Пример страницы стажировки</h1>
+
+<h3 class="vacancy-content" th:text="${content}"> Это то что нужно знать и тд  будет заполнаться из формы и добавляться шаблонизатором Это то что нужно знать и тд  будет заполнаться из формы и добавляться шаблонизатором Это то что нужно знать и тд  будет заполнаться из формы и добавляться шаблонизатором Это то что нужно знать и тд  будет заполнаться из формы и добавляться шаблонизатором Это то что нужно знать и тд  будет заполнаться из формы и добавляться шаблонизатором</h3>
+
+
+<div class="contacts-dt">
+<p class="contacts">Contacts:</p>
+
+<p class="contacts-values">Phone Number: <span th:text="${number}"></span></p>
+<p class="contacts-values">Email: <span th:text="${mail}"></span>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
